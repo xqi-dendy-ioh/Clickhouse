@@ -596,7 +596,7 @@ void StorageKafka::updateConfiguration(cppkafka::Configuration & kafka_config,
         LOG_WARNING(log, "sasl.kerberos.kinit.cmd configuration parameter is ignored.");
 
     kafka_config.set("sasl.kerberos.kinit.cmd","");
-    kafka_config.set("sasl.kerberos.min.time.before.relogin","0");
+    kafka_config.set("sasl.kerberos.min.time.before.relogin","60000");
 
     if (kafka_config.has_property("sasl.kerberos.keytab") && kafka_config.has_property("sasl.kerberos.principal"))
     {
